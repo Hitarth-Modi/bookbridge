@@ -484,6 +484,58 @@ function updateSellerNavLinks() {
   });
 }
 
+function initializeResponsiveNav() {
+  const headers = document.querySelectorAll(".site-header");
+
+  headers.forEach((header, index) => {
+    const toggle = header.querySelector(".nav-toggle");
+    const nav = header.querySelector(".site-nav");
+
+    if (!toggle || !nav) {
+      return;
+    }
+
+    const navId = nav.id || `site-nav-${index + 1}`;
+    nav.id = navId;
+    toggle.setAttribute("aria-controls", navId);
+
+    const closeMenu = () => {
+      header.classList.remove("nav-open");
+      toggle.setAttribute("aria-expanded", "false");
+    };
+
+    toggle.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const shouldOpen = !header.classList.contains("nav-open");
+
+      header.classList.toggle("nav-open", shouldOpen);
+      toggle.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!header.contains(event.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    });
+  });
+}
+
 function buildResultsUrl(filters = {}) {
   const params = new URLSearchParams();
   const {
@@ -1506,6 +1558,7 @@ function initializeApp() {
   seedListings();
   updateAdminNavLinks();
   updateSellerNavLinks();
+  initializeResponsiveNav();
 
   const page = document.body.dataset.page;
 
