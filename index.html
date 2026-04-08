@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookBridge | Book Price Comparison &amp; Reservation</title>
+    <meta
+      name="description"
+      content="Compare nearby bookstore prices, find the cheapest copy, and reserve your book before you visit."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="home">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">BB</span>
+            <span>BookBridge</span>
+          </a>
+
+          <nav class="site-nav">
+            <a href="results.html">Compare Prices</a>
+            <a href="list-store.html">List Your Store</a>
+            <a href="seller-login.html" data-seller-nav-link>Seller Login</a>
+            <a href="admin.html" data-admin-nav-link>Admin Login</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section">
+          <div class="hero-gradient"></div>
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Built for local book discovery</span>
+              <h1>Find the right bookstore before you step outside.</h1>
+              <p class="hero-text">
+                Search a title, compare nearby bookstore prices, and reserve the
+                copy that actually fits your budget, distance, and urgency.
+              </p>
+
+              <form class="search-panel" id="homeSearchForm">
+                <label class="search-field search-field-large">
+                  <span class="field-label">Book title</span>
+                  <input
+                    type="text"
+                    id="homeBookInput"
+                    name="book"
+                    placeholder="Search books"
+                    value=""
+                    required
+                  />
+                </label>
+
+                <div class="search-row">
+                  <label class="search-field">
+                    <span class="field-label">City</span>
+                    <input
+                      type="text"
+                      id="homeCityInput"
+                      name="city"
+                      placeholder="Enter city name"
+                      value=""
+                      required
+                    />
+                  </label>
+
+                  <button class="primary-button" type="submit">
+                    Compare Prices
+                  </button>
+                </div>
+              </form>
+
+              <div class="hero-actions">
+                <a class="secondary-link" href="#how-it-works">See how it works</a>
+                <a class="secondary-link" href="list-store.html">List your store</a>
+              </div>
+
+              <div class="hero-stats">
+                <article>
+                  <strong>180+</strong>
+                  <span>verified local listings</span>
+                </article>
+                <article>
+                  <strong>9 cities</strong>
+                  <span>ready for price comparison</span>
+                </article>
+                <article>
+                  <strong>2 min</strong>
+                  <span>average time to reserve</span>
+                </article>
+              </div>
+
+              <div class="category-strip">
+                <button
+                  class="category-pill"
+                  type="button"
+                  data-category-link="academic.html"
+                >
+                  Academic
+                  <span>B.Com, B.Tech</span>
+                </button>
+                <button
+                  class="category-pill"
+                  type="button"
+                  data-category-link="exam.html"
+                >
+                  Exam Prep
+                  <span>CAT, UPSC</span>
+                </button>
+                <button
+                  class="category-pill"
+                  type="button"
+                  data-category-link="general.html"
+                >
+                  General
+                  <span>Fiction, Self-help</span>
+                </button>
+              </div>
+            </div>
+
+            <aside class="hero-card">
+              <p class="hero-card-label">Live snapshot: Ahmedabad</p>
+              <div class="hero-card-book">
+                <div>
+                  <h2>Rich Dad Poor Dad</h2>
+                  <p>Across 4 nearby verified stores with same-day pickup</p>
+                </div>
+                <div class="hero-price">
+                  <strong>From Rs 219</strong>
+                  <span>Updated 2h ago</span>
+                </div>
+              </div>
+
+              <div class="hero-store-list">
+                <article>
+                  <div>
+                    <h3>PageTurner Books</h3>
+                    <p>2.1 km away</p>
+                  </div>
+                  <strong>Rs 219</strong>
+                </article>
+                <article>
+                  <div>
+                    <h3>StudySphere</h3>
+                    <p>3.8 km away</p>
+                  </div>
+                  <strong>Rs 240</strong>
+                </article>
+                <article>
+                  <div>
+                    <h3>Readers Junction</h3>
+                    <p>4.4 km away</p>
+                  </div>
+                  <strong>Rs 255</strong>
+                </article>
+              </div>
+
+              <div class="hero-highlight-panel">
+                <article>
+                  <span>Lowest verified price</span>
+                  <strong>Rs 219</strong>
+                </article>
+                <article>
+                  <span>Fastest pickup</span>
+                  <strong>18 mins away</strong>
+                </article>
+                <article>
+                  <span>Popular category</span>
+                  <strong>Self-help</strong>
+                </article>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="trust-section">
+          <div class="container trust-grid">
+            <article class="trust-card">
+              <h3>Compare instantly</h3>
+              <p>See prices, distances, editions, and freshness of listings in one clean view.</p>
+            </article>
+            <article class="trust-card">
+              <h3>Reserve before visiting</h3>
+              <p>Lock the book with a quick name and phone entry so the store can hold your copy.</p>
+            </article>
+            <article class="trust-card">
+              <h3>Made for local stores</h3>
+              <p>Independent bookstores can upload simple listings and appear in city-based search.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="insight-section">
+          <div class="container">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow">Popular searches</span>
+                <h2>Start with what people are already looking for</h2>
+              </div>
+              <p>
+                Jump into a ready-made search to preview how BookBridge helps
+                students, exam aspirants, and everyday readers compare real
+                nearby inventory.
+              </p>
+            </div>
+
+            <div class="insight-grid">
+              <a class="insight-card" href="results.html?book=Engineering+Mathematics&amp;city=Ahmedabad&amp;sort=price">
+                <span class="insight-tag">Academic</span>
+                <h3>Engineering Mathematics</h3>
+                <p>Find the fastest nearby option for a core semester title.</p>
+                <strong>From Rs 499 in Ahmedabad</strong>
+              </a>
+              <a class="insight-card" href="results.html?book=Quantitative+Aptitude+for+CAT&amp;city=Ahmedabad&amp;sort=price">
+                <span class="insight-tag">Exam Prep</span>
+                <h3>Quantitative Aptitude for CAT</h3>
+                <p>Compare serious prep books without calling five stores yourself.</p>
+                <strong>From Rs 389 in Ahmedabad</strong>
+              </a>
+              <a class="insight-card" href="results.html?book=Atomic+Habits&amp;city=Mumbai&amp;sort=price">
+                <span class="insight-tag">General</span>
+                <h3>Atomic Habits</h3>
+                <p>Browse top self-help titles with price and distance side by side.</p>
+                <strong>From Rs 299 in Mumbai</strong>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="process-section" id="how-it-works">
+          <div class="container process-grid">
+            <div class="section-heading section-heading-compact">
+              <div>
+                <span class="eyebrow">How it works</span>
+                <h2>A simple flow for readers and bookstores</h2>
+              </div>
+              <p>
+                BookBridge keeps the experience lightweight: no complicated
+                checkout, no endless marketplace clutter, just local discovery
+                that helps people move faster.
+              </p>
+            </div>
+
+            <div class="process-steps">
+              <article class="process-card">
+                <span class="process-number">01</span>
+                <h3>Search a title</h3>
+                <p>Enter the book name and city to see live matching inventory from nearby stores.</p>
+              </article>
+              <article class="process-card">
+                <span class="process-number">02</span>
+                <h3>Compare the details</h3>
+                <p>Sort by price or distance and check edition freshness before making a decision.</p>
+              </article>
+              <article class="process-card">
+                <span class="process-number">03</span>
+                <h3>Reserve and collect</h3>
+                <p>Submit your name and phone number so the shop can hold the copy for pickup.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="audience-section" id="for-sellers">
+          <div class="container audience-grid">
+            <div class="audience-copy">
+              <span class="eyebrow">For sellers</span>
+              <h2>Bring neighborhood bookstores into the digital shortlist</h2>
+              <p>
+                Independent stores often lose demand simply because buyers do
+                not know what is in stock nearby. BookBridge gives each seller a
+                simple listing flow and sends high-intent readers directly to
+                the store.
+              </p>
+
+              <div class="audience-points">
+                <article>
+                  <strong>Zero marketplace complexity</strong>
+                  <span>Upload listings, get discovered, and close the sale in-store.</span>
+                </article>
+                <article>
+                  <strong>Better local conversion</strong>
+                  <span>Reach shoppers who already know the title, price range, and city.</span>
+                </article>
+                <article>
+                  <strong>Admin review included</strong>
+                  <span>Listings can be checked before they appear publicly.</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="audience-panel">
+              <div class="audience-panel-top">
+                <p class="hero-card-label">Seller results that matter</p>
+                <h3>Bookstores get visibility where purchase intent is strongest</h3>
+              </div>
+
+              <div class="audience-metrics">
+                <article>
+                  <strong>3.4x</strong>
+                  <span>more qualified discovery than generic listing boards</span>
+                </article>
+                <article>
+                  <strong>1 min</strong>
+                  <span>to submit a new approval request</span>
+                </article>
+                <article>
+                  <strong>Local trust</strong>
+                  <span>verified badges help readers choose confidently</span>
+                </article>
+              </div>
+
+              <a class="primary-button full-width" href="list-store.html">Start selling on BookBridge</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="testimonial-section">
+          <div class="container">
+            <div class="section-heading">
+              <div>
+                <span class="eyebrow">Why it works</span>
+                <h2>Built around real local buying behavior</h2>
+              </div>
+              <p>
+                Readers want certainty before they travel. Sellers want demand
+                that is ready to convert. The product is designed around both.
+              </p>
+            </div>
+
+            <div class="testimonial-grid">
+              <article class="testimonial-card">
+                <p>
+                  "I usually call three shops before finding a textbook. This
+                  cuts that search into one screen."
+                </p>
+                <strong>Engineering student</strong>
+              </article>
+              <article class="testimonial-card">
+                <p>
+                  "The reservation step is small, but it filters out casual
+                  browsing and brings serious buyers."
+                </p>
+                <strong>Independent bookstore owner</strong>
+              </article>
+              <article class="testimonial-card">
+                <p>
+                  "Distance plus price together is what makes the decision easy.
+                  Cheap but far is not always the best deal."
+                </p>
+                <strong>Competitive exam aspirant</strong>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="faq-section">
+          <div class="container faq-grid">
+            <div class="section-heading section-heading-compact">
+              <div>
+                <span class="eyebrow">FAQ</span>
+                <h2>Questions people ask before they trust a local search tool</h2>
+              </div>
+            </div>
+
+            <div class="faq-list">
+              <article class="faq-card">
+                <h3>Does BookBridge handle online payments?</h3>
+                <p>No. The current flow is focused on discovery and reservation so buyers can complete the purchase in-store.</p>
+              </article>
+              <article class="faq-card">
+                <h3>Can sellers add multiple books?</h3>
+                <p>Yes. Once approved, sellers can manage listings through the seller dashboard and keep prices updated.</p>
+              </article>
+              <article class="faq-card">
+                <h3>What makes a listing trustworthy?</h3>
+                <p>Each result shows freshness, distance, category fit, and a verified status for approved sellers.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <div class="container cta-banner">
+            <div>
+              <span class="eyebrow">Ready to explore?</span>
+              <h2>Search your next book in seconds</h2>
+              <p>Start with a title and city, or onboard your store and appear in the next local search.</p>
+            </div>
+            <div class="cta-actions">
+              <a class="primary-button" href="results.html">Browse listings</a>
+              <a class="secondary-link" href="list-store.html">List a bookstore</a>
+            </div>
+          </div>
+        </section>
+
+        <footer class="site-footer">
+          <div class="container footer-grid">
+            <div>
+              <a class="brand footer-brand" href="index.html">
+                <span class="brand-mark">BB</span>
+                <span>BookBridge</span>
+              </a>
+              <p class="footer-copy">
+                Local-first book discovery for readers, students, and independent bookstores.
+              </p>
+            </div>
+            <div class="footer-links">
+              <a href="results.html">Compare prices</a>
+              <a href="list-store.html">List your store</a>
+              <a href="seller-login.html">Seller login</a>
+              <a href="admin.html">Admin login</a>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>

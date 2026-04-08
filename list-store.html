@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Your Store | BookBridge</title>
+    <meta
+      name="description"
+      content="Add your bookstore listing and appear in local book price comparison results."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="seller">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">BB</span>
+            <span>BookBridge</span>
+          </a>
+
+          <nav class="site-nav">
+            <a href="results.html">Compare Prices</a>
+            <a class="is-current" href="list-store.html">List Your Store</a>
+            <a href="seller-login.html" data-seller-nav-link>Seller Login</a>
+            <a href="admin.html" data-admin-nav-link>Admin Login</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="seller-main">
+        <section class="seller-hero">
+          <div class="container seller-layout">
+            <div class="seller-copy">
+              <span class="eyebrow">Seller MVP</span>
+              <h1>List your store in under a minute</h1>
+              <p>
+                Submit one book listing for review and an admin can approve it
+                before it goes live in local city searches. The password you set
+                here will be used for seller dashboard login after approval.
+              </p>
+
+              <div class="seller-points">
+                <article>
+                  <strong>Local-first visibility</strong>
+                  <span>Appear when nearby readers search for a title in your city.</span>
+                </article>
+                <article>
+                  <strong>Fast reservation intent</strong>
+                  <span>Shoppers reserve first, then visit your store to complete the purchase.</span>
+                </article>
+                <article>
+                  <strong>Zero backend setup</strong>
+                  <span>This MVP simulates the seller flow entirely on the frontend.</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="seller-card">
+              <div class="success-banner" id="sellerSuccess" hidden>
+                Your request has been sent for approval
+              </div>
+
+              <form id="sellerForm">
+                <label class="search-field">
+                  <span class="field-label">Shop name</span>
+                  <input type="text" id="shopName" required placeholder="PageTurner Books" />
+                </label>
+
+                <label class="search-field">
+                  <span class="field-label">Location (city)</span>
+                  <input type="text" id="shopCity" required placeholder="Ahmedabad" />
+                </label>
+
+                <label class="search-field">
+                  <span class="field-label">Book name</span>
+                  <input type="text" id="bookName" required placeholder="Rich Dad Poor Dad" />
+                </label>
+
+                <label class="search-field">
+                  <span class="field-label">Price</span>
+                  <input type="number" id="bookPrice" min="1" required placeholder="249" />
+                </label>
+
+                <label class="search-field">
+                  <span class="field-label">Seller password</span>
+                  <input
+                    type="password"
+                    id="sellerPassword"
+                    required
+                    placeholder="Create seller password"
+                  />
+                </label>
+
+                <button class="primary-button full-width" type="submit">Submit Request</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

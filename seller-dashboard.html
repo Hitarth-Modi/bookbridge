@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller Dashboard | BookBridge</title>
+    <meta
+      name="description"
+      content="Seller dashboard for managing your approved BookBridge listings."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="seller-dashboard">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">BB</span>
+            <span>BookBridge</span>
+          </a>
+
+          <nav class="site-nav">
+            <a href="results.html">Compare Prices</a>
+            <a href="list-store.html">List Your Store</a>
+            <a class="is-current" href="seller-dashboard.html" data-seller-nav-link>Seller Dashboard</a>
+            <a href="admin.html" data-admin-nav-link>Admin Login</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="seller-main">
+        <section class="seller-hero">
+          <div class="container admin-panel-wrap">
+            <div class="admin-panel-header">
+              <div>
+                <span class="eyebrow">Seller dashboard</span>
+                <h1 id="sellerDashboardTitle">Your Listings</h1>
+                <p class="hero-text admin-panel-text">
+                  Manage your own books, update prices, and publish fresh titles for your shop.
+                </p>
+              </div>
+              <div class="admin-panel-actions">
+                <span class="summary-stat" id="sellerDashboardCount">0 books</span>
+                <button class="secondary-link" type="button" id="sellerAddBookButton">Add New Book</button>
+                <button class="secondary-link" type="button" id="sellerLogoutButton">Logout</button>
+              </div>
+            </div>
+
+            <div class="results-grid" id="sellerListingsGrid"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="sellerAddModal" hidden>
+      <div class="modal-card">
+        <button class="modal-close" type="button" id="closeSellerAddModal" aria-label="Close">
+          ×
+        </button>
+        <p class="eyebrow">Add new book</p>
+        <h2>Add a book for your store</h2>
+
+        <div class="success-banner" id="sellerAddError" hidden></div>
+
+        <form id="sellerAddForm">
+          <label class="search-field">
+            <span class="field-label">Book name</span>
+            <input type="text" id="sellerAddBookName" required placeholder="Enter book name" />
+          </label>
+
+          <label class="search-field">
+            <span class="field-label">Price</span>
+            <input type="number" id="sellerAddPrice" min="1" required placeholder="Enter price" />
+          </label>
+
+          <button class="primary-button full-width" type="submit">Add Book</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="sellerEditModal" hidden>
+      <div class="modal-card">
+        <button class="modal-close" type="button" id="closeSellerEditModal" aria-label="Close">
+          ×
+        </button>
+        <p class="eyebrow">Edit price</p>
+        <h2>Update listing price</h2>
+
+        <div class="success-banner" id="sellerEditError" hidden></div>
+
+        <form id="sellerEditForm">
+          <input type="hidden" id="sellerEditListingId" />
+
+          <label class="search-field">
+            <span class="field-label">Price</span>
+            <input type="number" id="sellerEditPrice" min="1" required placeholder="Enter updated price" />
+          </label>
+
+          <button class="primary-button full-width" type="submit">Save Price</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

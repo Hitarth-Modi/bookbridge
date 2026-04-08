@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare Book Prices | BookBridge</title>
+    <meta
+      name="description"
+      content="Compare book prices from nearby offline stores and reserve the best option instantly."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="results">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">BB</span>
+            <span>BookBridge</span>
+          </a>
+
+          <nav class="site-nav">
+            <a class="is-current" href="results.html">Compare Prices</a>
+            <a href="list-store.html">List Your Store</a>
+            <a href="seller-login.html" data-seller-nav-link>Seller Login</a>
+            <a href="admin.html" data-admin-nav-link>Admin Login</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="results-main">
+        <section class="results-hero">
+          <div class="container">
+            <div class="results-topbar">
+              <div>
+                <span class="eyebrow">Search nearby inventory</span>
+                <h1>Compare local bookstores in seconds</h1>
+              </div>
+              <a class="secondary-link" href="list-store.html">Are you a seller?</a>
+            </div>
+
+            <form class="results-searchbar" id="resultsSearchForm">
+              <label class="search-field search-field-large">
+                <span class="field-label">Book title</span>
+                <input
+                  type="text"
+                  id="resultsBookInput"
+                  name="book"
+                  placeholder="Search title"
+                  required
+                />
+              </label>
+
+              <label class="search-field">
+                <span class="field-label">City</span>
+                <input
+                  type="text"
+                  id="resultsCityInput"
+                  name="city"
+                  placeholder="Ahmedabad"
+                  required
+                />
+              </label>
+
+              <label class="search-field">
+                <span class="field-label">Sort by</span>
+                <select id="sortSelect" name="sort">
+                  <option value="price">Lowest price</option>
+                  <option value="distance">Nearest distance</option>
+                </select>
+              </label>
+
+              <button class="primary-button" type="submit">Search</button>
+            </form>
+
+            <div class="results-summary">
+              <div>
+                <p class="summary-label">Showing results for</p>
+                <h2 id="resultsTitle">Rich Dad Poor Dad in Ahmedabad</h2>
+              </div>
+              <div class="summary-stat">
+                <strong id="resultsCount">0 stores</strong>
+                <span>Verified nearby sellers</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="results-section">
+          <div class="container">
+            <div class="results-grid" id="resultsGrid"></div>
+
+            <div class="empty-state" id="emptyState" hidden>
+              <h3>No matching stores found</h3>
+              <p>Try another title or city, or add a new store listing from the seller page.</p>
+              <a class="primary-button" href="list-store.html">List Your Store</a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="reservationModal" hidden>
+      <div class="modal-card">
+        <button class="modal-close" type="button" id="closeReservationModal" aria-label="Close">
+          ×
+        </button>
+        <p class="eyebrow">Reserve this book</p>
+        <h2 id="reservationTitle">Reserve book</h2>
+        <p class="modal-subtext" id="reservationStoreText"></p>
+
+        <div class="success-banner" id="reservationSuccess" hidden>
+          Book reserved. Please visit the store.
+        </div>
+
+        <form id="reservationForm">
+          <input type="hidden" id="reservationListingId" />
+
+          <label class="search-field">
+            <span class="field-label">Your name</span>
+            <input type="text" id="reservationName" required placeholder="Enter your name" />
+          </label>
+
+          <label class="search-field">
+            <span class="field-label">Phone number</span>
+            <input
+              type="tel"
+              id="reservationPhone"
+              required
+              placeholder="Enter phone number"
+              pattern="[0-9]{10}"
+            />
+          </label>
+
+          <button class="primary-button full-width" type="submit">Confirm Reservation</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

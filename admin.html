@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | BookBridge</title>
+    <meta
+      name="description"
+      content="Admin access for managing BookBridge store listings."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="admin">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">BB</span>
+            <span>BookBridge</span>
+          </a>
+
+          <nav class="site-nav">
+            <a href="results.html">Compare Prices</a>
+            <a href="list-store.html">List Your Store</a>
+            <a href="seller-login.html" data-seller-nav-link>Seller Login</a>
+            <a class="is-current" href="admin.html" data-admin-nav-link>Admin Login</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="seller-main">
+        <section class="seller-hero">
+          <div class="container admin-layout">
+            <div class="seller-copy">
+              <span class="eyebrow">Secure admin access</span>
+              <h1>Manage all live listings from one clean dashboard</h1>
+              <p>
+                Sign in as admin to review every store listing, update prices,
+                fix titles, or remove outdated entries.
+              </p>
+
+              <div class="seller-points">
+                <article>
+                  <strong>Protected access</strong>
+                  <span>Only the configured admin password unlocks edit and delete controls.</span>
+                </article>
+                <article>
+                  <strong>Fast listing control</strong>
+                  <span>Update a price or title without touching the rest of the listing data.</span>
+                </article>
+                <article>
+                  <strong>Live localStorage sync</strong>
+                  <span>Changes are applied directly to the same frontend dataset used across the site.</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="seller-card admin-auth-card" id="adminLoginCard">
+              <p class="hero-card-label">Admin Login</p>
+              <div class="success-banner" id="adminError" hidden></div>
+
+              <form id="adminLoginForm">
+                <label class="search-field">
+                  <span class="field-label">Password</span>
+                  <input
+                    type="password"
+                    id="adminPassword"
+                    required
+                    placeholder="Enter admin password"
+                  />
+                </label>
+
+                <button class="primary-button full-width" type="submit">Login</button>
+              </form>
+            </div>
+          </div>
+
+          <div class="container admin-panel-wrap" id="adminPanelSection" hidden>
+            <div class="admin-panel-header">
+              <div>
+                <span class="eyebrow">Admin panel</span>
+                <h2>All listings</h2>
+                <p class="hero-text admin-panel-text">
+                  Review, edit, or delete any listing currently stored in the MVP.
+                </p>
+              </div>
+              <div class="admin-panel-actions">
+                <span class="summary-stat" id="adminListingCount">0 listings</span>
+                <button class="secondary-link" type="button" id="adminLogoutButton">Logout</button>
+              </div>
+            </div>
+
+            <div class="results-grid" id="adminListingsGrid"></div>
+          </div>
+
+          <div class="container admin-panel-wrap" id="adminPendingSection" hidden>
+            <div class="admin-panel-header">
+              <div>
+                <span class="eyebrow">Pending approvals</span>
+                <h2>Seller requests</h2>
+                <p class="hero-text admin-panel-text">
+                  Approve requests to publish them live, or reject them to remove
+                  them from the queue.
+                </p>
+              </div>
+              <div class="admin-panel-actions">
+                <span class="summary-stat" id="adminPendingCount">0 requests</span>
+              </div>
+            </div>
+
+            <div class="results-grid" id="adminPendingGrid"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="adminEditModal" hidden>
+      <div class="modal-card">
+        <button class="modal-close" type="button" id="closeAdminEditModal" aria-label="Close">
+          ×
+        </button>
+        <p class="eyebrow">Edit listing</p>
+        <h2>Update listing details</h2>
+        <p class="modal-subtext">Only the book name and price can be modified from this panel.</p>
+
+        <div class="success-banner" id="adminEditError" hidden></div>
+
+        <form id="adminEditForm">
+          <input type="hidden" id="adminEditListingId" />
+
+          <label class="search-field">
+            <span class="field-label">Book name</span>
+            <input type="text" id="adminEditBookName" required placeholder="Enter book name" />
+          </label>
+
+          <label class="search-field">
+            <span class="field-label">Price</span>
+            <input type="number" id="adminEditPrice" min="1" required placeholder="Enter price" />
+          </label>
+
+          <button class="primary-button full-width" type="submit">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

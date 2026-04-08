@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>General Books | BookBridge</title>
+    <meta
+      name="description"
+      content="Browse general book subcategories and compare nearby bookstore prices."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">BB</span>
+            <span>BookBridge</span>
+          </a>
+
+          <nav class="site-nav">
+            <a href="results.html">Compare Prices</a>
+            <a href="list-store.html">List Your Store</a>
+            <a href="seller-login.html" data-seller-nav-link>Seller Login</a>
+            <a href="admin.html" data-admin-nav-link>Admin Login</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section">
+          <div class="hero-gradient"></div>
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">General catalogue</span>
+              <h1>Explore popular reading shelves with local price comparison</h1>
+              <p class="hero-text">
+                Start from the kind of book you want to read, then compare the
+                closest verified stores near you.
+              </p>
+
+              <div class="category-strip">
+                <a class="category-pill" href="results.html?category=General&subcategory=Fiction">
+                  Fiction
+                  <span>Novels, thrillers, and stories</span>
+                </a>
+                <a class="category-pill" href="results.html?category=General&subcategory=Non-Fiction">
+                  Non-Fiction
+                  <span>History, business, and ideas</span>
+                </a>
+                <a class="category-pill" href="results.html?category=General&subcategory=Self-Help">
+                  Self-Help
+                  <span>Habits, mindset, and growth</span>
+                </a>
+              </div>
+            </div>
+
+            <aside class="hero-card">
+              <p class="hero-card-label">Popular use cases</p>
+              <div class="hero-store-list">
+                <article>
+                  <div>
+                    <h3>Weekend reading</h3>
+                    <p>Check which nearby store has the best price today.</p>
+                  </div>
+                </article>
+                <article>
+                  <div>
+                    <h3>Gift buying</h3>
+                    <p>Reserve a copy before making the trip.</p>
+                  </div>
+                </article>
+                <article>
+                  <div>
+                    <h3>Fast local pickup</h3>
+                    <p>Compare distance first when you need a book quickly.</p>
+                  </div>
+                </article>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

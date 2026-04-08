@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Academic Books | BookBridge</title>
+    <meta
+      name="description"
+      content="Browse academic book subcategories and compare nearby bookstore prices."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">BB</span>
+            <span>BookBridge</span>
+          </a>
+
+          <nav class="site-nav">
+            <a href="results.html">Compare Prices</a>
+            <a href="list-store.html">List Your Store</a>
+            <a href="seller-login.html" data-seller-nav-link>Seller Login</a>
+            <a href="admin.html" data-admin-nav-link>Admin Login</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero-section">
+          <div class="hero-gradient"></div>
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Academic catalogue</span>
+              <h1>Choose your stream and compare nearby academic stock</h1>
+              <p class="hero-text">
+                Jump into the right academic shelf first, then see which local
+                bookstores have the best available copy.
+              </p>
+
+              <div class="category-strip">
+                <a class="category-pill" href="results.html?category=Academic&subcategory=B.Com">
+                  B.Com
+                  <span>Commerce-focused textbooks</span>
+                </a>
+                <a class="category-pill" href="results.html?category=Academic&subcategory=BBA">
+                  BBA
+                  <span>Management and business basics</span>
+                </a>
+                <a class="category-pill" href="results.html?category=Academic&subcategory=B.Tech">
+                  B.Tech
+                  <span>Engineering subjects and references</span>
+                </a>
+                <a class="category-pill" href="results.html?category=Academic&subcategory=B.E.">
+                  B.E.
+                  <span>Core engineering course books</span>
+                </a>
+                <a class="category-pill" href="results.html?category=Academic&subcategory=MBA">
+                  MBA
+                  <span>Strategy, finance, and leadership</span>
+                </a>
+              </div>
+            </div>
+
+            <aside class="hero-card">
+              <p class="hero-card-label">How it works</p>
+              <div class="hero-store-list">
+                <article>
+                  <div>
+                    <h3>1. Pick a subcategory</h3>
+                    <p>Choose the shelf that matches your course.</p>
+                  </div>
+                </article>
+                <article>
+                  <div>
+                    <h3>2. Compare stores</h3>
+                    <p>See prices, distance, edition, and freshness.</p>
+                  </div>
+                </article>
+                <article>
+                  <div>
+                    <h3>3. Reserve instantly</h3>
+                    <p>Hold the book before visiting the store.</p>
+                  </div>
+                </article>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller Login | BookBridge</title>
+    <meta
+      name="description"
+      content="Approved sellers can log in to manage their BookBridge listings."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body data-page="seller-login">
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">BB</span>
+            <span>BookBridge</span>
+          </a>
+
+          <nav class="site-nav">
+            <a href="results.html">Compare Prices</a>
+            <a href="list-store.html">List Your Store</a>
+            <a class="is-current" href="seller-login.html" data-seller-nav-link>Seller Login</a>
+            <a href="admin.html" data-admin-nav-link>Admin Login</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="seller-main">
+        <section class="seller-hero">
+          <div class="container admin-layout">
+            <div class="seller-copy">
+              <span class="eyebrow">Seller access</span>
+              <h1>Manage only your own approved listings</h1>
+              <p>
+                Approved sellers can log in with their shop name and password to
+                add books, update prices, and remove their own listings.
+              </p>
+
+              <div class="seller-points">
+                <article>
+                  <strong>Approval required</strong>
+                  <span>Your shop appears here only after admin approval.</span>
+                </article>
+                <article>
+                  <strong>Scoped access</strong>
+                  <span>You can manage only listings that belong to your own shop.</span>
+                </article>
+                <article>
+                  <strong>Frontend-only auth</strong>
+                  <span>Simple localStorage session handling for this MVP flow.</span>
+                </article>
+              </div>
+            </div>
+
+            <div class="seller-card admin-auth-card">
+              <p class="hero-card-label">Seller Login</p>
+              <div class="success-banner" id="sellerLoginError" hidden></div>
+
+              <form id="sellerLoginForm">
+                <label class="search-field">
+                  <span class="field-label">Shop name</span>
+                  <input type="text" id="sellerLoginShopName" required placeholder="PageTurner Books" />
+                </label>
+
+                <label class="search-field">
+                  <span class="field-label">Password</span>
+                  <input type="password" id="sellerLoginPassword" required placeholder="Enter password" />
+                </label>
+
+                <button class="primary-button full-width" type="submit">Login to Dashboard</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
